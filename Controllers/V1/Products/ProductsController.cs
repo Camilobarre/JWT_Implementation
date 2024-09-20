@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using JWT_Implementation.Data;
 using JWT_Implementation.Models;
 
-namespace JWT_ProductManager.Controllers.v1.Products;
+namespace JWT_Implementation.Controllers.v1.Products;
 
 [Route("api/v1/[controller]")]
 [ApiController]
