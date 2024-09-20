@@ -10,7 +10,7 @@ using Microsoft.OpenApi.Models;
 Env.Load();
 
 var host = Environment.GetEnvironmentVariable("DB_HOST");
-var databaseName = Environment.GetEnvironmentVariable("DB_NAME");
+var databaseName = Environment.GetEnvironmentVariable("DB_DATABASE");
 var port = Environment.GetEnvironmentVariable("DB_PORT");
 var username = Environment.GetEnvironmentVariable("DB_USERNAME");
 var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
