@@ -4,10 +4,12 @@ using JWT_Implementation.Models;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace JWT_Implementation.Controllers.v1.Auth;
 
 [ApiController]
+[AllowAnonymous]
 [Route("api/v1/[controller]")]
 public class AuthController : ControllerBase
 {
@@ -61,8 +63,11 @@ public class AuthController : ControllerBase
             return Unauthorized("Invalid password");
         }
 
-        // we will create the JWT token
-
-        return Ok("Login");
+        var token = _utilities.GenerateJwtToken(user);
+        return Ok(new
+        {
+            message = "Please, save this token",
+            jwt = token
+        });
     }
 }

@@ -2,10 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using JWT_Implementation.Data;
 using JWT_Implementation.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace JWT_Implementation.Controllers.v1.Products;
 
 [Route("api/v1/[controller]")]
+[Authorize]
 [ApiController]
 public class ProductsController : ControllerBase
 {
